@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151912">
+  <meta name="description" content="ARMOR — каталог бронетехники">
+  <title>ARMOR — каталог танков</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="brand" href="#">ARMOR<span>.</span></a>
+      <span class="top-note">КАТАЛОГ ТЕХНИКИ</span>
+    </div>
 
+    <section class="hero">
+      <p class="eyebrow">ЭЛЕКТРОННЫЙ КАТАЛОГ</p>
+      <h1>Броня. Мощь.<br>Технологии.</h1>
+      <p class="hero-description">
+        Каталог бронетехники с данными из базы.
+        Ищи модели, сравнивай цены и проверяй наличие.
+      </p>
+    </section>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <article class="stat">
+        <p class="stat-label">Моделей в каталоге</p>
+        <p class="stat-value" id="modelsCount">—</p>
+      </article>
+
+      <article class="stat">
+        <p class="stat-label">Всего единиц</p>
+        <p class="stat-value" id="unitsCount">—</p>
+      </article>
+
+      <article class="stat">
+        <p class="stat-label">Стоимость запасов</p>
+        <p class="stat-value" id="inventoryValue">—</p>
+      </article>
+    </section>
+
+    <section class="catalog-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">БАЗА ДАННЫХ</p>
+          <h2>Каталог танков</h2>
+        </div>
+        <span class="catalog-mark">ARMOR / 001</span>
+      </div>
+
+      <div class="controls">
+        <label class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по названию..."
+            aria-label="Поиск танков"
+          >
+        </label>
+
+        <select id="sort" aria-label="Сортировка">
+          <option value="name">По названию</option>
+          <option value="priceAsc">Сначала дешевле</option>
+          <option value="priceDesc">Сначала дороже</option>
+          <option value="quantityDesc">По количеству</option>
+        </select>
+      </div>
+
+      <p id="status" class="status" role="status">
+        Подключаемся к базе данных...
+      </p>
+
+      <div id="tanks" class="tank-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="brand footer-brand">ARMOR<span>.</span></span>
+      <span>Учебный проект · Данные из Supabase</span>
+    </div>
+  </footer>
+</body>
+</html>
